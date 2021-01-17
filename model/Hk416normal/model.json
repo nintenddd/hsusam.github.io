@@ -1,0 +1,63 @@
+{
+  "version": "Sample 1.0.0",
+  "model": "model.moc",
+  "textures": ["model.1024/texture_00.png"],
+  "motions": {
+    "idle": [
+      {
+        "file": "motions/daiji_idle_01.mtn"
+      },
+      {
+        "file": "motions/wait_1.mtn"
+      },
+      {
+        "file": "motions/wait_2.mtn"
+      }
+    ],
+    "flick_head": [
+      {
+        "file": "motions/login.mtn",
+        "sound": "sound/HK416_HELLO_JP.mp3"
+      }
+    ],
+    "tap_body": [      
+      {
+        "file": "motions/touch_5.mtn",
+        "sound": "sound/HK416_AGREE_JP.mp3"
+      },
+      {
+        "file": "motions/touch_3.mtn",
+        "sound": "sound/HK416_DIALOGUE3_JP.mp3"
+      },
+      {
+        "file": "motions/touch_2.mtn",
+        "sound": "sound/HK416_DIALOGUE2_JP.mp3"
+      }
+    ],
+    "tap_hand": [
+      {
+        "file": "motions/touch_1.mtn",
+        "sound": "sound/HK416_DIALOGUE1_JP.mp3"
+      },
+      {
+        "file": "motions/touch_4.mtn",
+        "sound": "sound/HK416_MOOD1_JP.mp3"
+      }
+    ]
+  },
+  "physics": "physics.json",
+  "hit_areas": [
+    {
+      "name": "head",
+      "id": "D_REF.HEAD"
+    },
+    {
+      "name": "body",
+      "id": "D_REF.BODY"
+    },
+    {
+      "name": "hand",
+      "id": "D_REF.HAND"
+    }
+  ]
+}

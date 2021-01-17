@@ -1,0 +1,35 @@
+{
+  "version": "Sample 1.0.0",
+  "model": "model.moc",
+  "textures": ["model.1024/texture_00.png"],
+  "motions": {
+    "idle": [
+      { "file": "motions/daiji_idle_02.mtn" }
+    ],
+    "flick_head": [
+      {
+        "file": "motions/broken_1.mtn",
+        "sound": "sound/HK416_BREAK_JP.mp3"
+      }
+    ],
+    "tap_body": [
+      {
+        "file": "motions/broken_3.mtn",
+        "sound": "sound/HK416_RETREAT_JP.mp3"
+      }
+    ],
+    "tap_leg": [
+      {
+        "file": "motions/broken_4.mtn",
+        "sound": "sound/HK416_MOOD2_JP.mp3"
+      }
+    ]
+  },
+  "physics": "physics.json",
+
+  "hit_areas": [
+    { "name": "body", "id": "D_REF_BODY" },
+    { "name": "head", "id": "D_REF_HEAD" },
+    { "name": "leg", "id": "D_REF_LEG" }
+  ]
+}
