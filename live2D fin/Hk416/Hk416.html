@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hk416 live2D Display</title>
+    <style type="text/css">
+      #live2d {
+        /* background-color: aqua; */
+        position: relative;
+        top: 30px;
+        left: 0px;
+      }
+
+      #change {
+        position: relative;
+        top: 20px;
+        left: 100px;
+      }
+      body{
+        /* background-image:url("model/bkgdpng1.png") ;  */
+        background-color: pink;
+      }
+    </style>
+    <script type="text/javascript" src="/jQuery/jquery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(init);
+      function init() {
+        $("#change").click(changeHandler);
+      }
+      var i = 0;
+      function changeHandler() {
+        if (i<Live2D_array.length-1)
+          i++;
+        else
+          i=0;
+        live2D = loadLive2d(Live2D_array[i]);        
+        console.log(i);        
+      }
+    </script>
+  </head>
+
+  <body>
+    <script src="../dist/index.js"></script>
+    <canvas id="live2d"></canvas>    
+    <input type="button" value="Change" id="change" />
+    <script type="text/javascript">
+      var live2D;
+      var live2DWidth = 700;
+      var live2DHeight = 800;
+      var Hk416_Live2D_normal = {
+        canvas: "live2d",
+        baseUrl: "./model/Hk416normal/",
+        model: "./model/Hk416normal/model.json",
+        imageUrl: "./model/Hk416normal/",
+        allowSound: true,
+        interval: 15000, // 自动motion的开始时间点到下一个motion的开始点之间的间隔
+        idle: "idle", // 自动触发的motion
+        width: live2DWidth, // html上的width属性优先级更高
+        height: live2DHeight, // html上的height属性优先级更高
+        globalFollowPointer: false, // 全局跟随鼠标 def:false
+        debug: {
+          DEBUG_LOG: false,
+          DEBUG_MOUSE_LOG: false,
+        },
+        layout: {
+          // 布局设置 这个优先级最高，然后到model.json(字段正确的话)，再到默认
+          width: "",
+          height: "",
+          x: "",
+          y: "",
+          center_x: "",
+          center_y: "",
+          top: "",
+          bottom: "",
+          left: "",
+          right: "",
+        },
+        view: {
+          VIEW_MAX_SCALE: 1, // 最大缩放比例
+          VIEW_MIN_SCALE: 1, // 最小缩放比例
+          VIEW_LOGICAL_LEFT: -1,
+          VIEW_LOGICAL_RIGHT: 1,
+          VIEW_LOGICAL_MAX_LEFT: -2,
+          VIEW_LOGICAL_MAX_RIGHT: 2,
+          VIEW_LOGICAL_MAX_BOTTOM: -2,
+          VIEW_LOGICAL_MAX_TOP: 2,
+        },
+        binding: {
+          head: "flick_head",
+          body: "tap_body",
+          hand: "tap_hand",
+        },
+        autoLoadAudio: function () {
+          console.log("音频加载完毕");
+        },
+        initModelCallback(waifu) {
+          console.log(waifu);
+          console.log("模型加载完毕");
+        },
+      };
+      var Hk416_Live2D_break = {
+        canvas: "live2d",
+        baseUrl: "./model/Hk416destroy/",
+        model: "./model/Hk416destroy/model.json",
+        imageUrl: "./model/Hk416destroy/",
+        allowSound: true,
+        interval: 15000, // 自动motion的开始时间点到下一个motion的开始点之间的间隔
+        idle: "idle", // 自动触发的motion
+        width: live2DWidth, // html上的width属性优先级更高
+        height: live2DHeight, // html上的height属性优先级更高
+        globalFollowPointer: false, // 全局跟随鼠标 def:false
+        debug: {
+          DEBUG_LOG: false,
+          DEBUG_MOUSE_LOG: false,
+        },
+        layout: {
+          // 布局设置 这个优先级最高，然后到model.json(字段正确的话)，再到默认
+          width: "",
+          height: "",
+          x: "",
+          y: "",
+          center_x: "",
+          center_y: "",
+          top: "",
+          bottom: "",
+          left: "",
+          right: "",
+        },
+        view: {
+          VIEW_MAX_SCALE: 1, // 最大缩放比例
+          VIEW_MIN_SCALE: 1, // 最小缩放比例
+          VIEW_LOGICAL_LEFT: -1,
+          VIEW_LOGICAL_RIGHT: 1,
+          VIEW_LOGICAL_MAX_LEFT: -2,
+          VIEW_LOGICAL_MAX_RIGHT: 2,
+          VIEW_LOGICAL_MAX_BOTTOM: -2,
+          VIEW_LOGICAL_MAX_TOP: 2,
+        },
+        binding: {
+          head: "flick_head",
+          body: "tap_body",
+          leg: "tap_leg",
+        },
+        autoLoadAudio: function () {
+          console.log("音频加载完毕");
+        },
+        initModelCallback(waifu) {
+          console.log(waifu);
+          console.log("模型2加载完毕");
+        },
+      };
+
+      var Live2D_array = [Hk416_Live2D_normal, Hk416_Live2D_break];
+      live2D = loadLive2d(Live2D_array[0]);
+    </script>
+  </body>
+</html>
