@@ -6,7 +6,7 @@
     "idle": [
       { "file": "motions/daiji_idle_02.mtn" }
     ],
-    "flick_head": [
+    "flick_head": [  
       {
         "file": "motions/broken_1.mtn",
         "sound": "sound/HK416_BREAK_JP.mp3"
